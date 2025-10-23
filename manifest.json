@@ -1,23 +1,13 @@
 {
-    "manifest_version": 3,
-    "name": "Tradutor de Compreensão de Texto",
-    "version": "1.0",
-    "description": "Modifica o conteúdo das páginas web usando a API do ChatGPT.",
-    "permissions": ["scripting", "activeTab", "contextMenus", "storage"],
-    "host_permissions": ["<all_urls>"],
-    "action": {
-      "default_popup": "popup.html",
-      "default_icon": {
-        "48": "icons/icon.png"
-      }
-    },
-    "background": {
-      "service_worker": "background.js"
-    },
-    "web_accessible_resources": [
-      {
-        "matches": ["<all_urls>"]
-      }
-    ]
-  }
-  
+  "manifest_version": 3,
+  "name": "Tradutor de Texto Simples",
+  "version": "1.0",
+  "description": "Simplifica textos complexos usando IA para analfabetos funcionais.",
+  "permissions": ["activeTab", "scripting"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
